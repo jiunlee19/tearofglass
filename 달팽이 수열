@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+ int r,c,k,a[5][5]={0},g=1,s,i;
+ r=0;
+ c=-1;
+ k=5;
+ s=1;
+
+ while(1)
+ {
+     for(i=1;i<=k;i++)
+     {
+         c+=s;
+         a[r][c]=g;
+         g++;
+
+     }
+     k--;
+     if(k==0)break;
+     for(i=1;i<=k;i++)
+     {
+         r+=s;
+         a[r][c]=g;
+         g++;
+     }
+     s=-s;
+ }
+
+    for(r=0;r<5;r++){
+    for(c=0;c<5;c++){
+    printf("%2d ",a[r][c]);
+    }printf("\n");}
+}
